@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Questionnaire</title>
+    <style type="text/css">
+
+        span {
+            color: red;
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Ankieta dotycząca ....</h1>
+<p>Wpisz sie aby wyrazić swoją opinie.</p>
+
+
+
+<form th:action="@{/add}" th:object="${newquestionnaire}" method="post">
+    <p>Imie:<input type="text" th:field="*{name}"></p>
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span>
+    <p>Nazwisko:<input type="text" th:field="*{surname}"></p>
+    <span th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">Surname Error</span>
+    <p>Data urodzenia<input type="date" th:field="*{birthday}"> </p>
+    <p><input type="submit" value="Wpisz się"></p>
+</form>
+
+
+</body>
+</html>

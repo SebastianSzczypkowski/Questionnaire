@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>POdsumowanie</title>
+</head>
+<body>
+
+
+<h3><b>Udało ci się ukończyć ankietę.Dziękujemy!</b></h3>
+</br>
+Odpowiedzie które udzielili ankietujący:
+
+
+    <li th:each="answer:${answers}">
+        <p>Twoja odpowiedź na pytanie nr1: <span th:text="${answer.getAnswer1()}"></span></p>
+        <p>Twoja odpowiedź na pytanie nr2:<span th:text="${answer.getAnswer2()}"></span></p>
+        <p>Twoja odpowiedź na pytanie nr3: <span th:text="${answer.getAnswer3()}"></span></p>
+    </li>
+<
+
+</body>
+</html>

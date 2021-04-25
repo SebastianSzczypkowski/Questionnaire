@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Answers</title>
+</head>
+<body>
+
+<form th:action="@{/add-answer}" th:object="${newanswer}" method="post">
+    <p>Pytanie numer jeden ??</p>
+<input type="text" th:field="*{answer1}">
+<p>Pytanie numer dwa ??</p>
+<input type="text" th:field="*{answer2}">
+<p>Pytanie numer trzy ??</p>
+<input type="text" th:field="*{answer3}" >
+    <p><input type="submit" value="Wyślij swoje odpowiedzi"></p>
+</form>
+
+
+</body>
+</html>
