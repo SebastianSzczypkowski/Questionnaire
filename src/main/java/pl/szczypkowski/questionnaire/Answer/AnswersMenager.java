@@ -34,8 +34,8 @@ public class AnswersMenager {
     }
     @EventListener(ApplicationReadyEvent.class)
     public void fillDB(){
-        save(new Answers("tutututut","tatatatatatta","yyeyeyeyeye"));
-        save(new Answers("tutututut","tatatatatatta","yyeyeyeyeye"));
+        save(new Answers("Tak","wszystko działa jak należy",""));
+        save(new Answers("Nie","usługa nie jest dostępna lub nie działa w weekendy","polepszyć jakość usługi w moim regionie"));
     }
 
 

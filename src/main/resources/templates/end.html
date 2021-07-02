@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>POdsumowanie</title>
+    <title>Podsumowanie</title>
 </head>
 <body>
 
@@ -12,12 +12,13 @@
 Odpowiedzie które udzielili ankietujący:
 
 
-    <li th:each="answer:${answers}">
-        <p>Twoja odpowiedź na pytanie nr1: <span th:text="${answer.getAnswer1()}"></span></p>
-        <p>Twoja odpowiedź na pytanie nr2:<span th:text="${answer.getAnswer2()}"></span></p>
-        <p>Twoja odpowiedź na pytanie nr3: <span th:text="${answer.getAnswer3()}"></span></p>
-    </li>
-<
+    <li th:each="answer:${answers}" >
+        <p><b>Czy jest pani/pan zadowalona z świadczonych usług?: </b><span th:text="${answer.getAnswer1()}"></span></p>
+    <p><b>Czy występują jakieś problemy ?:</b><span th:text="${answer.getAnswer2()}"></span></p>
+      <b>  <p>Co należało by poprawić aby polepszyć nasze usługi?:</b> <span th:text="${answer.getAnswer3()}"></span></p>
+
+</li>
+
 
 </body>
 </html>

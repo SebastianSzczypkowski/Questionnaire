@@ -7,13 +7,13 @@
 <body>
 
 <form th:action="@{/add-answer}" th:object="${newanswer}" method="post">
-    <p>Pytanie numer jeden ??</p>
+    <p>Czy jest pani/pan zadowalona z świadczonych usług?</p>
 <input type="text" th:field="*{answer1}">
-<p>Pytanie numer dwa ??</p>
+<p>Czy występują jakieś problemy ?</p>
 <input type="text" th:field="*{answer2}">
-<p>Pytanie numer trzy ??</p>
+<p>Co należało by poprawić aby polepszyć nasze usługi?</p>
 <input type="text" th:field="*{answer3}" >
-    <p><input type="submit" value="Wyślij swoje odpowiedzi"></p>
+    <p><input type="submit" value="Wyślij swoją opinię"></p>
 </form>
 
 

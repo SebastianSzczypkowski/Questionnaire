@@ -14,19 +14,27 @@
 </head>
 <body>
 
-<h1>Ankieta dotycząca ....</h1>
-<p>Wpisz sie aby wyrazić swoją opinie.</p>
+<h1>Witaj w ankiecie dotyczące koszystania z naszej usługi</h1>
+<p style="font-size: medium">Wpisz sie aby wyrazić swoją opinie.</p>
 
 
-
+<div class="form-area">
 <form th:action="@{/add}" th:object="${newquestionnaire}" method="post">
+    <mat-form-field appearance="fill">
     <p>Imie:<input type="text" th:field="*{name}"></p>
+
     <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span>
-    <p>Nazwisko:<input type="text" th:field="*{surname}"></p>
+    </mat-form-field>
+        <mat-form-field appearance="fill">
+        <p>Nazwisko:<input type="text" th:field="*{surname}"></p>
     <span th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">Surname Error</span>
+        </mat-form-field>
+            <mat-form-field appearance="fill">
     <p>Data urodzenia<input type="date" th:field="*{birthday}"> </p>
-    <p><input type="submit" value="Wpisz się"></p>
+            </mat-form-field>
+    <p><input type="submit" class="btn btn-info" value="Wpisz się"></p>
 </form>
+</div>
 
 
 </body>

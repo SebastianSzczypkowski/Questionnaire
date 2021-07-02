@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.szczypkowski.questionnaire.Answer.Answers;
 import pl.szczypkowski.questionnaire.Answer.AnswersMenager;
+import pl.szczypkowski.questionnaire.Questionnaire.Questionnaire;
+import pl.szczypkowski.questionnaire.Questionnaire.QuestionnaireMenager;
 
 import java.security.Principal;
 import java.util.List;
@@ -17,10 +19,12 @@ public class EndController {
 
 
     private AnswersMenager answersMenager;
+    private QuestionnaireMenager questionnaireMenager;
     @Autowired
-    public EndController(AnswersMenager answersMenager)
+    public EndController(AnswersMenager answersMenager,QuestionnaireMenager questionnaireMenager)
     {
         this.answersMenager=answersMenager;
+        this.questionnaireMenager=questionnaireMenager;
     }
 
     private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(EndController.class);
@@ -30,8 +34,11 @@ public class EndController {
     {
 
        List<Answers> answersList = (List<Answers>) answersMenager.findAll();
-        log.info("TUTUTUUTUTUTUTUTU: "+answersList);
+       List<Questionnaire> questionnaires = (List<Questionnaire>) questionnaireMenager.findAll();
+
+        log.info("Odpowiedzi: "+answersList);
         model.addAttribute("answers",answersList);
+        model.addAttribute("users",questionnaires);
 
         return "end";
     }
